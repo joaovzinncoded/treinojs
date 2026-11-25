@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Storyboard — Sky Whale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#28251F;--soft:#9C968A;--line:#D9D2C4;--paper:#F7F4EC;--card:#FFFDF8;
+    --glow:#E8A93C;--flow:#3A6EA5;--flow-soft:#E6EEF6;
+    --sketch:"Caveat",cursive;--ui:"Archivo",-apple-system,BlinkMacSystemFont,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--ui);background:repeating-linear-gradient(0deg,transparent 0 38px,rgba(40,37,31,.025) 38px 39px),var(--paper);color:var(--ink);padding:40px 22px 70px}
+  .sheet{max-width:1080px;margin:0 auto}
+  header{border-bottom:2.5px solid var(--ink);padding-bottom:18px}
+  .kicker{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--soft)}
+  header h1{font-weight:800;font-size:30px;letter-spacing:-.6px;margin-top:6px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  header h1 svg{flex:none}
+  header .meta{font-size:13.5px;color:var(--soft);margin-top:8px;line-height:1.5}
+  header .meta b{color:var(--ink);font-weight:600}
+  .legend{display:flex;flex-wrap:wrap;gap:18px 26px;align-items:center;background:var(--card);border:1.5px dashed var(--line);border-radius:12px;padding:13px 18px;margin:18px 0 26px}
+  .legend .li{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:500;color:#54504A}
+  .legend svg{flex:none}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .panel{background:var(--card);border:1.5px solid var(--ink);border-radius:6px;overflow:hidden;box-shadow:4px 5px 0 rgba(40,37,31,.12)}
+  .ptop{display:flex;align-items:center;gap:10px;padding:10px 13px;border-bottom:1.5px solid var(--ink);background:#FBF7EE}
+  .pnum{width:26px;height:26px;flex:none;background:var(--ink);color:#FBF7EE;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:14px}
+  .ptitle{font-weight:700;font-size:15px;flex:1}
+  .ptag{font-size:10px;font-weight:800;letter-spacing:1px;padding:3px 8px;border-radius:20px;border:1.5px solid var(--ink)}
+  .ptag.start{background:var(--ink);color:#FBF7EE}
+  .ptag.mid{background:transparent;color:var(--ink)}
+  .ptag.end{background:var(--glow);color:#3a2602;border-color:#3a2602}
+  .screen{padding:14px 14px 4px;display:flex;justify-content:center}
+  .screen svg{width:62%;height:auto;display:block}
+  @media(max-width:760px){.screen svg{width:54%}}
+  .pnotes{padding:6px 15px 15px;font-size:13px;line-height:1.5}
+  .pnotes p{margin-top:5px;color:#46423B}
+  .pnotes b{color:var(--ink);font-weight:700}
+  .pnotes .flow{color:var(--flow);font-weight:700}
+  .lbl{font-family:var(--sketch);font-weight:700}
+  .uitxt{font-family:var(--ui);font-weight:700}
+  footer{margin-top:30px;border-top:2px solid var(--ink);padding-top:16px}
+  .flowmap{font-family:var(--sketch);font-size:19px;line-height:1.7;font-weight:600}
+  .flowmap b{background:var(--flow-soft);color:var(--flow);padding:1px 8px;border-radius:6px;font-weight:700}
+  footer .note{font-size:12.5px;color:var(--soft);margin-top:12px}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <filter id="rough" x="-6%" y="-6%" width="112%" height="112%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="11" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="2"/>
+  </filter>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0 L10 5 L0 10 z" fill="#3A6EA5"/>
+  </marker>
+</defs></svg>
+
+<div class="sheet">
+  <header>
+    <div class="kicker">Storyboard · Protótipo de jogo</div>
+    <h1>
+      <svg width="34" height="26" viewBox="0 0 64 44"><g stroke="#28251F" stroke-width="2" fill="none"><ellipse cx="26" cy="24" rx="20" ry="12" fill="#EAF1F6"/><path d="M44 24 L60 14 L55 24 L60 34 Z" fill="#EAF1F6"/><path d="M22 35 L30 35 L25 42 Z" fill="#EAF1F6"/></g><circle cx="16" cy="22" r="2" fill="#28251F"/><g stroke="#3A6EA5" stroke-width="1.6" stroke-linecap="round"><path d="M12 10 v-5M9 12 l-3-4M16 11 l1-5"/></g></svg>
+      Sky Whale
+    </h1>
+    <div class="meta">
+      <b>Disciplina:</b> Interface Homem-Máquina — Momento N2 · <b>Profa.</b> Silvia Brandão · 2026.1 &nbsp;|&nbsp; <b>Turma:</b> [41]<br>
+      <b>Alunos:</b> [João Victor Nogueira de Oliveira]
+    </div>
+  </header>
+
+  <div class="legend">
+    <div class="li"><svg width="34" height="20"><rect x="2" y="3" width="30" height="14" rx="3" fill="none" stroke="#28251F" stroke-width="1.6"/></svg>Botão / menu / UI</div>
+    <div class="li"><svg width="22" height="20"><circle cx="11" cy="10" r="8" fill="none" stroke="#28251F" stroke-width="1.6"/></svg>Ícone / personagem</div>
+    <div class="li"><svg width="38" height="20"><line x1="2" y1="10" x2="30" y2="10" stroke="#3A6EA5" stroke-width="2" marker-end="url(#arrow)"/></svg>Interação / navegação</div>
+    <div class="li"><svg width="22" height="20"><circle cx="11" cy="10" r="7" fill="#E8A93C"/></svg>Bolha / estrela (coletável)</div>
+  </div>
+
+  <div class="grid">
+
+    <!-- 1 ABERTURA -->
+    <article class="panel">
+      <div class="ptop"><span class="pnum">1</span><span class="ptitle">Tela de abertura</span><span class="ptag start">INÍCIO</span></div>
+      <div class="screen"><svg viewBox="0 0 210 280">
+        <g filter="url(#rough)">
+          <rect x="8" y="8" width="194" height="264" rx="18" fill="none" stroke="#28251F" stroke-width="2.4"/>
+          <path d="M40 244 q12-16 28-8 q10-12 26-2 q14-10 30 2 q14-6 24 6Z" fill="#EFE9DC" stroke="#9C968A" stroke-width="1.4"/>
+          <!-- whale -->
+          <ellipse cx="98" cy="118" rx="22" ry="13" fill="#FBF7EE" stroke="#28251F" stroke-width="2.2"/>
+          <path d="M118 118 L136 106 L131 118 L136 130 Z" fill="#FBF7EE" stroke="#28251F" stroke-width="2"/>
+          <path d="M93 130 L102 130 L97 138 Z" fill="#FBF7EE" stroke="#28251F" stroke-width="1.8"/>
+          <circle cx="86" cy="115" r="2.4" fill="#28251F"/>
+          <!-- play btn -->
+          <rect x="62" y="172" width="86" height="30" rx="15" fill="none" stroke="#28251F" stroke-width="2.4"/>
+          <path d="M99 181 l11 6 l-11 6 z" fill="#28251F"/>
+          <rect x="78" y="212" width="54" height="18" rx="9" fill="none" stroke="#9C968A" stroke-width="1.6"/>
+        </g>
+        <!-- spout -->
+        <g stroke="#3A6EA5" stroke-width="1.8" stroke-linecap="round"><path d="M80 102 v-7M76 105 l-4-5M86 103 l2-6"/></g>
+        <text x="105" y="66" text-anchor="middle" class="uitxt" font-size="19" fill="#28251F">SKY WHALE</text>
+        <text x="105" y="84" text-anchor="middle" class="uitxt" font-size="10" fill="#7c766a">Recorde: 0 m</text>
+        <text x="111" y="192" text-anchor="middle" class="uitxt" font-size="13" fill="#28251F">
+        <text x="105" y="225" text-anchor="middle" class="uitxt" font-size="9" fill="#7c766a">OPÇÕES</text>
+        <path d="M148 187 q34 0 34 26" fill="none" stroke="#3A6EA5" stroke-width="2" marker-end="url(#arrow)"/>
+        <text x="186" y="182" class="lbl" font-size="14" fill="#3A6EA5">→ Cena 2</text>
+      </svg></div>
+      <div class="pnotes"><p><b>Ação:</b> tela inicial com título, a baleia flutuando e o recorde.</p><p><b>Interação:</b> <span class="flow">tocar em JOGAR</span> começa o voo.</p></div>
+    </article>
+
+    <!-- 2 COMO JOGAR -->
+    <article class="panel">
+      <div class="ptop"><span class="pnum">2</span><span class="ptitle">Como jogar (tutorial)</span><span class="ptag start">INÍCIO</span></div>
+      <div class="screen"><svg viewBox="0 0 210 280">
+        <g filter="url(#rough)">
+          <rect x="8" y="8" width="194" height="264" rx="18" fill="none" stroke="#28251F" stroke-width="2.4"/>
+          <!-- HUD -->
+          <rect x="20" y="20" width="60" height="18" rx="5" fill="none" stroke="#28251F" stroke-width="1.5"/>
+          <circle cx="170" cy="29" r="6" fill="#E8A93C"/>
+          <!-- whale low -->
+          <ellipse cx="96" cy="170" rx="20" ry="12" fill="#FBF7EE" stroke="#28251F" stroke-width="2.2"/>
+          <path d="M114 170 L130 160 L126 170 L130 180 Z" fill="#FBF7EE" stroke="#28251F" stroke-width="2"/>
+          <circle cx="85" cy="167" r="2.2" fill="#28251F"/>
+          <!-- tapping hand -->
+          <circle cx="150" cy="200" r="13" fill="none" stroke="#28251F" stroke-width="1.6" stroke-dasharray="3 4"/>
+          <path d="M150 196 v9M146 200 h8" stroke="#28251F" stroke-width="2" stroke-linecap="round"/>
+        </g>
+        <text x="50" y="33" text-anchor="middle" class="uitxt" font-size="11" fill="#28251F">0 m</text>
+        <text x="158" y="33" text-anchor="end" class="uitxt" font-size="11" fill="#28251F">x0</text>
+        <text x="105" y="108" text-anchor="middle" class="lbl" font-size="16" fill="#46423B">Segure para subir,</text>
+        <text x="105" y="126" text-anchor="middle" class="lbl" font-size="16" fill="#46423B">solte para descer.</text>
+        <path d="M96 156 v-30" fill="none" stroke="#3A6EA5" stroke-width="2.2" marker-end="url(#arrow)"/>
+        <text x="106" y="150" class="lbl" font-size="13" fill="#3A6EA5">a baleia sobe</text>
+      </svg></div>
+      <div class="pnotes"><p><b>Ação:</b> ensina o controle por toque e mostra a HUD (altura + bolhas).</p><p><b>Interação:</b> <span class="flow">segurar/soltar</span> controla a subida e a descida.</p></div>
+    </article>
+
+    <!-- 3 FASE 1 CÉU -->
+    <article class="panel">
+      <div class="ptop"><span class="pnum">3</span><span class="ptitle">Fase 1 — Céu (nuvens)</span><span class="ptag mid">MEIO</span></div>
+      <div class="screen"><svg viewBox="0 0 210 280">
+        <g filter="url(#rough)">
+          <rect x="8" y="8" width="194" height="264" rx="18" fill="none" stroke="#28251F" stroke-width="2.4"/>
+          <rect x="20" y="20" width="60" height="18" rx="5" fill="none" stroke="#28251F" stroke-width="1.5"/>
+          <!-- altitude scale -->
+          <line x1="190" y1="48" x2="190" y2="250" stroke="#9C968A" stroke-width="1.4"/>
+          <path d="M186 70 h8M186 130 h8M186 190 h8M186 250 h8" stroke="#9C968A" stroke-width="1.4"/>
+          <path d="M190 158 l-6 -4 v8 Z" fill="#28251F"/>
+          <!-- clouds -->
+          <path d="M30 130 q10-12 24-6 q12-8 22 4Z" fill="#EFE9DC" stroke="#9C968A" stroke-width="1.4"/>
+          <path d="M120 200 q10-12 24-6 q12-8 22 4Z" fill="#EFE9DC" stroke="#9C968A" stroke-width="1.4"/>
+          <!-- whale mid -->
+          <ellipse cx="92" cy="170" rx="19" ry="11" fill="#FBF7EE" stroke="#28251F" stroke-width="2.2"/>
+          <path d="M109 170 L124 161 L120 170 L124 179 Z" fill="#FBF7EE" stroke="#28251F" stroke-width="2"/>
+          <circle cx="82" cy="167" r="2" fill="#28251F"/>
+          <!-- bird obstacle -->
+          <path d="M120 95 q5-7 9 0 q4-7 9 0" fill="none" stroke="#28251F" stroke-width="1.8"/>
+        </g>
+        <!-- collectibles (bolhas) -->
+        <circle cx="92" cy="120" r="5" fill="#E8A93C"/><circle cx="96" cy="95" r="5" fill="#E8A93C"/><circle cx="88" cy="70" r="5" fill="#E8A93C"/>
+        <text x="50" y="33" text-anchor="middle" class="uitxt" font-size="11" fill="#28251F">120 m</text>
+        <path d="M92 158 q4-40 -2 -78" fill="none" stroke="#3A6EA5" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+        <text x="118" y="60" class="lbl" font-size="13" fill="#3A6EA5">colete as bolhas subindo</text>
+      </svg></div>
+      <div class="pnotes"><p><b>Ação:</b> a baleia sobe pelas nuvens coletando bolhas e ganhando pontos.</p><p><b>Interação:</b> <span class="flow">subir na trajetória das bolhas</span> sem bater nos pássaros.</p></div>
+    </article>
+
+    <!-- 4 DESAFIO OBSTÁCULOS -->
+    <article class="panel">
+      <div class="ptop"><span class="pnum">4</span><span class="ptitle">Desafio — Obstáculos</span><span class="ptag mid">MEIO</span></div>
+      <div class="screen"><svg viewBox="0 0 210 280">
+        <g filter="url(#rough)">
+          <rect x="8" y="8" width="194" height="264" rx="18" fill="none" stroke="#28251F" stroke-width="2.4"/>
+          <!-- whale weaving -->
+          <ellipse cx="78" cy="150" rx="19" ry="11" fill="#FBF7EE" stroke="#28251F" stroke-width="2.2"/>
+          <path d="M95 150 L110 141 L106 150 L110 159 Z" fill="#FBF7EE" stroke="#28251F" stroke-width="2"/>
+          <circle cx="68" cy="147" r="2" fill="#28251F"/>
+          <!-- bird -->
+          <path d="M120 90 q5-7 9 0 q4-7 9 0" fill="none" stroke="#28251F" stroke-width="1.8"/>
+          <!-- paper plane -->
+          <path d="M140 150 L164 158 L150 162 L154 170 Z" fill="none" stroke="#28251F" stroke-width="1.8"/>
+          <!-- balloon -->
+          <circle cx="60" cy="220" r="11" fill="none" stroke="#28251F" stroke-width="1.8"/>
+          <path d="M56 230 L64 230 L60 236 Z" fill="none" stroke="#28251F" stroke-width="1.4"/>
+          <line x1="60" y1="236" x2="60" y2="248" stroke="#28251F" stroke-width="1.2"/>
+        </g>
+        <path d="M95 142 q26-30 44 6" fill="none" stroke="#3A6EA5" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+        <path d="M150 100 v40" fill="none" stroke="#3A6EA5" stroke-width="1.5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+        <text x="105" y="120" text-anchor="middle" class="lbl" font-size="13" fill="#3A6EA5">desvie dos obstáculos</text>
+        <text x="105" y="262" text-anchor="middle" class="lbl" font-size="12.5" fill="#46423B">encostar = fim do voo</text>
+      </svg></div>
+      <div class="pnotes"><p><b>Ação:</b> aparecem pássaros, aviões de papel e balões — desafio de reflexo.</p><p><b>Interação:</b> <span class="flow">ajustar a subida</span> para desviar; colidir encerra a partida.</p></div>
+    </article>
+
+    <!-- 5 TEMPESTADE -->
+    <article class="panel">
+      <div class="ptop"><span class="pnum">5</span><span class="ptitle">Fase 2 — Tempestade</span><span class="ptag mid">MEIO</span></div>
+      <div class="screen"><svg viewBox="0 0 210 280">
+        <g filter="url(#rough)">
+          <rect x="8" y="8" width="194" height="264" rx="18" fill="none" stroke="#28251F" stroke-width="2.4"/>
+          <!-- storm clouds -->
+          <path d="M30 80 q14-16 32-8 q16-12 30 4 q14-6 20 8 q-6 10-20 8 H44 q-18 0 -14-20Z" fill="#E2DBCC" stroke="#28251F" stroke-width="1.6"/>
+          <path d="M120 230 q14-16 32-8 q14-6 18 8 q-6 10-20 8 h-22 q-14 0 -8-16Z" fill="#E2DBCC" stroke="#28251F" stroke-width="1.6"/>
+          <!-- lightning -->
+          <path d="M70 96 l-8 16 l8 -2 l-6 16" fill="none" stroke="#28251F" stroke-width="2.4" stroke-linejoin="round"/>
+          <!-- rain -->
+          <g stroke="#9C968A" stroke-width="1.3" stroke-linecap="round"><path d="M100 100 l-3 7M115 110 l-3 7M92 120 l-3 7"/></g>
+          <!-- whale weaving -->
+          <ellipse cx="120" cy="160" rx="19" ry="11" fill="#FBF7EE" stroke="#28251F" stroke-width="2.2"/>
+          <path d="M137 160 L152 151 L148 160 L152 169 Z" fill="#FBF7EE" stroke="#28251F" stroke-width="2"/>
+          <circle cx="110" cy="157" r="2" fill="#28251F"/>
+        </g>
+        <path d="M120 148 q-26-28 -48 0 q24 26 0 44" fill="none" stroke="#3A6EA5" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+        <text x="105" y="262" text-anchor="middle" class="lbl" font-size="13" fill="#3A6EA5">desvie dos raios e do vento</text>
+      </svg></div>
+      <div class="pnotes"><p><b>Ação:</b> nova camada do céu com tempestade — raios e vento dificultam a subida.</p><p><b>Interação:</b> <span class="flow">corrigir o trajeto</span> entre os raios para continuar subindo.</p></div>
+    </article>
+
+    <!-- 6 POWER-UP -->
+    <article class="panel">
+      <div class="ptop"><span class="pnum">6</span><span class="ptitle">Impulso — Bolha-foguete</span><span class="ptag mid">MEIO</span></div>
+      <div class="screen"><svg viewBox="0 0 210 280">
+        <g filter="url(#rough)">
+          <rect x="8" y="8" width="194" height="264" rx="18" fill="none" stroke="#28251F" stroke-width="2.4"/>
+          <!-- boost bar -->
+          <rect x="20" y="20" width="80" height="16" rx="8" fill="none" stroke="#28251F" stroke-width="1.6"/>
+          <rect x="22" y="22" width="56" height="12" rx="6" fill="#E8A93C"/>
+          <!-- whale heading up -->
+          <ellipse cx="96" cy="186" rx="19" ry="11" fill="#FBF7EE" stroke="#28251F" stroke-width="2.2"/>
+          <path d="M113 186 L128 177 L124 186 L128 195 Z" fill="#FBF7EE" stroke="#28251F" stroke-width="2"/>
+          <circle cx="86" cy="183" r="2" fill="#28251F"/>
+        </g>
+        <!-- rocket bubble power-up -->
+        <circle cx="96" cy="92" r="13" fill="#E8A93C"/>
+        <path d="M96 84 l5 8 h-10 Z" fill="#FBF7EE" stroke="#28251F" stroke-width="1.4"/>
+        <g stroke="#28251F" stroke-width="1.4" stroke-linecap="round"><path d="M92 102 l-2 6M100 102 l2 6"/></g>
+        <text x="104" y="33" text-anchor="middle" class="uitxt" font-size="10" fill="#28251F">IMPULSO</text>
+        <path d="M96 174 v-66" fill="none" stroke="#3A6EA5" stroke-width="2.2" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+        <text x="106" y="150" class="lbl" font-size="13" fill="#3A6EA5">pegue p/ um super impulso</text>
+      </svg></div>
+      <div class="pnotes"><p><b>Ação:</b> coletáveis especiais (bolha-foguete) enchem a barra e dão um arranque para cima.</p><p><b>Interação:</b> <span class="flow">alcançar o power-up</span> impulsiona a baleia mais alto.</p></div>
+    </article>
+
+    <!-- 7 ESPAÇO -->
+    <article class="panel">
+      <div class="ptop"><span class="pnum">7</span><span class="ptitle">Fase final — Espaço</span><span class="ptag mid">MEIO · clímax</span></div>
+      <div class="screen"><svg viewBox="0 0 210 280">
+        <g filter="url(#rough)">
+          <rect x="8" y="8" width="194" height="264" rx="18" fill="#F1EEE6" stroke="#28251F" stroke-width="2.4"/>
+          <rect x="20" y="20" width="64" height="18" rx="5" fill="none" stroke="#28251F" stroke-width="1.5"/>
+          <!-- satellite obstacle -->
+          <rect x="130" y="150" width="16" height="12" rx="2" fill="none" stroke="#28251F" stroke-width="1.6"/>
+          <path d="M124 156 h6M146 156 h6" stroke="#28251F" stroke-width="1.6"/>
+          <!-- whale near top -->
+          <ellipse cx="92" cy="150" rx="18" ry="10" fill="#FBF7EE" stroke="#28251F" stroke-width="2.2"/>
+          <path d="M108 150 L122 142 L118 150 L122 158 Z" fill="#FBF7EE" stroke="#28251F" stroke-width="2"/>
+          <circle cx="83" cy="147" r="2" fill="#28251F"/>
+        </g>
+        <!-- small stars -->
+        <g fill="#E8A93C"><circle cx="50" cy="110" r="2.5"/><circle cx="150" cy="100" r="2.5"/><circle cx="60" cy="200" r="2.5"/><circle cx="160" cy="210" r="2.5"/></g>
+        <!-- goal big star -->
+        <path d="M105 56 l5 13 l14 1 l-11 9 l4 14 l-12 -8 l-12 8 l4 -14 l-11 -9 l14 -1 Z" fill="#E8A93C" stroke="#28251F" stroke-width="1.4"/>
+        <text x="50" y="33" text-anchor="middle" class="uitxt" font-size="11" fill="#28251F">980 m</text>
+        <path d="M92 140 v-40" fill="none" stroke="#3A6EA5" stroke-width="2.2" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+        <text x="118" y="120" class="lbl" font-size="13" fill="#3A6EA5">alcance a estrela maior</text>
+      </svg></div>
+      <div class="pnotes"><p><b>Ação:</b> clímax acima da atmosfera — chegar à estrela-objetivo desviando de satélites.</p><p><b>Interação:</b> <span class="flow">subida final</span> combinando controle de impulso e desvio.</p></div>
+    </article>
+
+    <!-- 8 FINALIZAÇÃO -->
+    <article class="panel">
+      <div class="ptop"><span class="pnum">8</span><span class="ptitle">Finalização — Recorde</span><span class="ptag end">FIM</span></div>
+      <div class="screen"><svg viewBox="0 0 210 280">
+        <g filter="url(#rough)">
+          <rect x="8" y="8" width="194" height="264" rx="18" fill="none" stroke="#28251F" stroke-width="2.4"/>
+          <!-- whale celebrating -->
+          <ellipse cx="105" cy="120" rx="22" ry="13" fill="#FBF7EE" stroke="#28251F" stroke-width="2.2"/>
+          <path d="M125 120 L142 109 L137 120 L142 131 Z" fill="#FBF7EE" stroke="#28251F" stroke-width="2"/>
+          <circle cx="94" cy="116" r="2.4" fill="#28251F"/>
+          <!-- buttons -->
+          <rect x="50" y="178" width="110" height="26" rx="13" fill="none" stroke="#28251F" stroke-width="2.2"/>
+          <rect x="50" y="212" width="52" height="22" rx="11" fill="none" stroke="#9C968A" stroke-width="1.8"/>
+          <rect x="108" y="212" width="52" height="22" rx="11" fill="none" stroke="#9C968A" stroke-width="1.8"/>
+        </g>
+        <!-- stars + spout celebration -->
+        <g fill="#E8A93C"><path d="M70 70 l3 7 l7 .5 l-5 5 l1.5 7 l-6.5 -4 l-6.5 4 l1.5 -7 l-5 -5 l7 -.5 Z"/><path d="M150 70 l3 7 l7 .5 l-5 5 l1.5 7 l-6.5 -4 l-6.5 4 l1.5 -7 l-5 -5 l7 -.5 Z"/></g>
+        <text x="105" y="50" text-anchor="middle" class="uitxt" font-size="12.5" fill="#28251F">VOCÊ ALCANÇOU AS ESTRELAS!</text>
+        <text x="105" y="160" text-anchor="middle" class="uitxt" font-size="11" fill="#28251F">Altura: 1.000 m · Recorde: 1.000 m ★</text>
+        <text x="105" y="195" text-anchor="middle" class="uitxt" font-size="11" fill="#28251F">JOGAR DE NOVO</text>
+        <text x="76" y="226" text-anchor="middle" class="uitxt" font-size="9" fill="#7c766a">MENU</text>
+        <text x="134" y="226" text-anchor="middle" class="uitxt" font-size="9" fill="#7c766a">RANKING</text>
+        <path d="M76 234 q0 14 -30 14 q-38 0 -38 -200" fill="none" stroke="#3A6EA5" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+        <text x="40" y="258" text-anchor="middle" class="lbl" font-size="12" fill="#3A6EA5">MENU → Cena 1</text>
+      </svg></div>
+      <div class="pnotes"><p><b>Ação:</b> tela final mostra a altura alcançada e o recorde — fecha a partida.</p><p><b>Interação:</b> <span class="flow">Jogar de novo</span> reinicia · <span class="flow">Menu</span> volta à abertura · <span class="flow">Ranking</span> mostra recordes.</p></div>
+    </article>
+
+  </div>
+
+  <footer>
+    <div class="flowmap">Fluxo de navegação:&nbsp; <b>1. Abertura</b> → <b>2. Como jogar</b> → <b>3. Céu</b> → <b>4. Obstáculos</b> → <b>5. Tempestade</b> → <b>6. Impulso</b> → <b>7. Espaço</b> → <b>8. Recorde</b> ↺ menu</div>
+    <p class="note">Storyboard wireframe — foco na funcionalidade e no fluxo (sem detalhes artísticos), conforme o enunciado. Dá pra tirar print desta folha para o PDF, ou recriar à mão / no Canva / StoryboardThat se a professora pedir versão desenhada.</p>
+  </footer>
+</div>
+</body>
+</html>
