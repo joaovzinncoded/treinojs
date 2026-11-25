@@ -1,0 +1,7 @@
+{
+    "editor.quickSuggestionsDelay": 0,
+    "editor.suggest.selectionMode": "never",
+    "editor.suggest.showSnippets": false,
+    "editor.inlineSuggest.edits.showLongDistanceHint": false,
+    "editor.acceptSuggestionOnEnter": "off"
+}
